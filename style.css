@@ -687,3 +687,253 @@ footer {
     align-items: center;
     gap: 18px;
 }
+
+/* Responsive layout refinements */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+svg {
+    max-width: 100%;
+}
+
+nav {
+    gap: 24px;
+    padding: 20px clamp(20px, 7vw, 8%);
+}
+
+.logo,
+.logo strong {
+    min-width: 0;
+}
+
+.menu {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 14px;
+}
+
+#home {
+    --hero-top-gap: 40px;
+    --hero-image-height: 47.3vw;
+    --profile-size: clamp(150px, 18vw, 240px);
+    min-height: 0;
+    padding: var(--hero-top-gap) 8% 80px;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1671 / 941;
+    margin: 0;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-photo {
+    top: calc(var(--hero-top-gap) + var(--hero-image-height) - var(--profile-size));
+    right: 10%;
+    transform: none;
+}
+
+.profile-photo img {
+    width: var(--profile-size);
+    height: var(--profile-size);
+}
+
+.home-content {
+    width: 100%;
+    max-width: 760px;
+    margin: 24px 0 0;
+}
+
+.home-content h1 {
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    overflow-wrap: anywhere;
+}
+
+.home-content h2 {
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    line-height: 1.45;
+}
+
+.intro {
+    max-width: 100%;
+    margin: 0 0 30px;
+    font-size: clamp(0.95rem, 1.4vw, 1.0625rem);
+}
+
+#about,
+#skills,
+#experience,
+#contact {
+    min-height: 0;
+    padding: clamp(56px, 8vw, 100px) clamp(20px, 8vw, 8%);
+    scroll-margin-top: 20px;
+}
+
+.about-content {
+    gap: 5%;
+}
+
+.about-text {
+    width: 62%;
+    min-width: 0;
+}
+
+.about-strengths {
+    width: 32%;
+    min-width: 0;
+}
+
+#about h2,
+#skills h2,
+#experience h2 {
+    font-size: clamp(2rem, 5vw, 3.125rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+.skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+
+.skill,
+.experience-item {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.experience-item {
+    width: 100%;
+    margin: 24px 0 0;
+}
+
+.contact-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+footer {
+    padding-inline: 20px;
+}
+
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    .about-text,
+    .about-strengths {
+        width: 100%;
+    }
+
+    .strength-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 10px 14px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    #home {
+        --hero-top-gap: 30px;
+        --hero-image-height: 49.6vw;
+        --profile-size: 110px;
+        padding: var(--hero-top-gap) 6% 64px;
+    }
+
+    .hero-background {
+        width: 100%;
+    }
+
+    .profile-photo {
+        top: calc(var(--hero-top-gap) + var(--hero-image-height) - var(--profile-size));
+        right: 6%;
+    }
+
+    .profile-photo img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .home-content {
+        margin-top: 24px;
+    }
+
+    .home-buttons {
+        gap: 12px;
+    }
+
+    .btn {
+        padding: 11px 16px;
+    }
+
+    .experience-item {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo strong {
+        font-size: 24px;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .menu {
+        column-gap: 10px;
+    }
+
+    #home {
+        --hero-image-height: 50.7vw;
+        padding-inline: 5%;
+    }
+
+    .profile-photo {
+        right: 5%;
+        top: calc(var(--hero-top-gap) + var(--hero-image-height) - var(--profile-size));
+    }
+
+    .home-buttons {
+        align-items: stretch;
+    }
+
+    .home-buttons .btn {
+        text-align: center;
+    }
+
+    #contact {
+        padding-inline: 5%;
+    }
+
+    .experience-item {
+        padding: 20px;
+    }
+}
